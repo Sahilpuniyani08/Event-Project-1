@@ -3,12 +3,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Icon from './Icon';
 import { menuItems } from '../constants/mockData';
 
- const Sidebar = ({ isOpen, onClose }) => {
+const Sidebar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
-  const currentPath = location.pathname.replace(/^\/+/, ''); 
+  const currentPath = location.pathname.replace(/^\/+/, '');
 
   const handleMenuClick = (item) => {
     if (item.submenu) {
@@ -36,9 +36,8 @@ import { menuItems } from '../constants/mockData';
 
       {/* Sidebar */}
       <div
-        className={`fixed left-0 top-0 h-full w-64 border bottom-2 bg-black/90 lg:bg-black/50 border-primary rounded-xl text-white transform transition-transform duration-300 z-50 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-2 lg:static lg:z-auto`}
+        className={`fixed left-0 top-0 h-full w-64 border bottom-2 bg-black/90 lg:bg-black/50 border-primary rounded-xl text-white transform transition-transform duration-300 z-50 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          } lg:translate-x-2 lg:static lg:z-auto`}
       >
         {/* Navigation Menu */}
         <nav className="flex-1 overflow-y-auto">
@@ -53,15 +52,27 @@ import { menuItems } from '../constants/mockData';
                 <div key={item.id}>
                   <button
                     onClick={() => handleMenuClick(item)}
-                    className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors w-full text-left ${
-                      isActiveMain
-                        ? 'border-pimary text-primary border  border-primary'
+                    className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors w-full text-left ${isActiveMain
+                        ? 'border-pimary text-primary border border-primary'
                         : 'text-white hover:text-white/80'
-                    }`}
+                      }`}
                   >
-                    <Icon type={item.icon} size={20} />
-                    <span>{item.label}</span>
+                    <span className="flex items-center space-x-3">
+                      <Icon type={item.icon} size={20} />
+                      <span>{item.label}</span>
+                    </span>
+
+                    {item.submenu && (
+                      <Icon
+                        type="chevronLeft"
+                        size={20}
+                        className={`text-primary transform transition-transform duration-200 ${openSubmenu === item.id ? '-rotate-90' : 'rotate-90'
+                          }`}
+                      />
+                    )}
                   </button>
+
+
 
                   {/* Submenu as Button List */}
                   {item.submenu && openSubmenu === item.id && (
@@ -72,11 +83,10 @@ import { menuItems } from '../constants/mockData';
                           <button
                             key={subItem.id}
                             onClick={() => handleSubmenuClick(subItem.id)}
-                            className={`block text-left w-full px-3 py-1 rounded-lg text-sm border-l-2 rounded-tl-none ${
-                              isSubActive
-                                ? 'text-primary  border-primary'
-                                : 'text-white  hover:text-white/80 border-white'
-                            }`}
+                            className={`block text-left w-full px-3 py-1 rounded-lg text-sm border-l-2 rounded-tl-none ${isSubActive
+                              ? 'text-primary  border-primary'
+                              : 'text-white  hover:text-white/80 border-white'
+                              }`}
                           >
                             {subItem.label}
                           </button>
