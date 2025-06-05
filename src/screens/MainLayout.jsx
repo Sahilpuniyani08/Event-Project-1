@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import Header from '../components/Header'
-import Sidebar from '../components/sideBar'
 import { Outlet } from 'react-router'
-
+import Header from '../components/Header';
+import { Sidebar } from '../components/sidebar';
 const MainLayout = () => {
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState('events');
+
     return (
         <div className="flex flex-col h-screen ">
             <Header onMenuClick={() => setSidebarOpen(true)} />
@@ -15,8 +14,6 @@ const MainLayout = () => {
                 <Sidebar
                     isOpen={sidebarOpen}
                     onClose={() => setSidebarOpen(false)}
-                    activeSection={activeSection}
-                    setActiveSection={setActiveSection}
                 />
                 <main className="flex-1 overflow-y-auto ">
                     <Outlet />
