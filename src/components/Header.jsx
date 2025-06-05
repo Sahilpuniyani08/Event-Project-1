@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from './Icon';
 import { userProfile } from '../constants/mockData';
 import Logo from '../assets/logo.png'
-import ProfileImage from './profileImage';
+import ProfileImage from './ProfileImage';
 
 const Header = ({ onMenuClick }) => {
   return (
@@ -31,7 +31,7 @@ const Header = ({ onMenuClick }) => {
           </button>
 
           <div className="flex items-center space-x-3">
-            <ProfileImage className="w-10 h-10 rounded-full object-cover" />
+            <ProfileImage className="w-10 h-10 rounded-full object-cover" /> 
             <div className="hidden sm:block text-right">
               <p className="text-sm font-medium text-cyan-200">Hi, {userProfile.name}</p>
               <p className="text-xs text-white">welcome back!</p>
