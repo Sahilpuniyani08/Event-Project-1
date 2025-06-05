@@ -62,13 +62,13 @@ const EventTable = ({ data }) => {
         <table className="w-full overflow-auto">
           <thead className="bg-primary text-white">
             <tr>
-              <th className="px-4 py-3 text-left text-sm font-medium "></th>
-              <th className="px-4 py-3 text-left text-sm font-medium ">Event Name</th>
-              <th className="px-4 py-3 text-left text-sm font-medium  ">Event Start</th>
-              <th className="px-4 py-3 text-left text-sm font-medium  ">Event End</th>
-              <th className="px-4 py-3 text-left text-sm font-medium ">Client Name</th>
-              <th className="px-4 py-3 text-left text-sm font-medium  ">Contact Info</th>
-              <th className="px-4 py-3 text-left text-sm font-medium  ">Venue</th>
+              <th className="px-4 py-3 text-left text-sm font-medium whitespace-nowrap"></th>
+              <th className="px-4 py-3 text-left text-sm font-medium whitespace-nowrap">Event Name</th>
+              <th className="px-4 py-3 text-left text-sm font-medium whitespace-nowrap ">Event Start</th>
+              <th className="px-4 py-3 text-left text-sm font-medium whitespace-nowrap ">Event End</th>
+              <th className="px-4 py-3 text-left text-sm font-medium whitespace-nowrap">Client Name</th>
+              <th className="px-4 py-3 text-left text-sm font-medium  whitespace-nowrap">Contact Info</th>
+              <th className="px-4 py-3 text-left text-sm font-medium  whitespace-nowrap">Venue</th>
 
             </tr>
           </thead>
@@ -76,22 +76,22 @@ const EventTable = ({ data }) => {
             {currentData.map((item) => (
               <tr key={item.id} className="hover:bg-primary/20 transition-colors text-white" onClick={() => handleEventClick(item.id)}>
                 <td className="px-4 py-3">
-                  <button className="text-white hover:text-primary transition-colors">
+                  <button className="text-white hover:text-primary transition-colors ">
                     <Icon type="visibility" size={20} />
                   </button>
                 </td>
                 <td className="px-4 py-3">
-                  <div className="text-sm font-medium ">{item.eventName}</div>
+                  <div className="text-sm font-medium whitespace-nowrap">{item.eventName}</div>
                 </td>
-                <td className="px-4 py-3 text-sm ">
+                <td className="px-4 py-3 text-sm whitespace-nowrap">
                   {formatDate(item.eventStart)}
                 </td>
-                <td className="px-4 py-3 text-sm ">
+                <td className="px-4 py-3 text-sm whitespace-nowrap">
                   {formatDate(item.eventEnd)}
                 </td>
-                <td className="px-4 py-3 text-sm">{item.clientName}</td>
-                <td className="px-4 py-3 text-sm">{item.contactInfo}</td>
-                <td className="px-4 py-3 text-sm">{item.venue}</td>
+                <td className="px-4 py-3 text-sm whitespace-nowrap">{item.clientName}</td>
+                <td className="px-4 py-3 text-sm whitespace-nowrap">{item.contactInfo}</td>
+                <td className="px-4 py-3 text-sm whitespace-nowrap">{item.venue}</td>
 
               </tr>
             ))}

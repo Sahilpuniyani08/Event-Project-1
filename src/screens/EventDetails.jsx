@@ -99,10 +99,10 @@ const EventDetails = () => {
           <tbody>
             {currentPositions.map((position) => (
               <tr key={position.id} className="border-b border-gray-700">
-                <td className="py-3 px-2">{position.position}</td>
-                <td className="py-3 px-2 text-gray-300">{position.time}</td>
-                <td className="py-3 px-2 text-gray-300">{position.info}</td>
-                <td className="py-3 px-2 text-purple-400">{position.quantity}</td>
+                <td className="py-3 px-2 whitespace-nowrap">{position.position}</td>
+                <td className="py-3 px-2 whitespace-nowrap text-gray-300">{position.time}</td>
+                <td className="py-3 px-2 whitespace-nowrap text-gray-300">{position.info}</td>
+                <td className="py-3 px-2 whitespace-nowrap text-purple-400">{position.quantity}</td>
                 <td>
                   {/* Available Contractors */}
 
@@ -296,12 +296,12 @@ const EventDetails = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap   mb-4 sm:mb-6 overflow-x-auto">
+        <div className="flex mb-4 sm:mb-6 overflow-x-auto">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 sm:px-4 py-2 text-xs  first:rounded-l-xl last:rounded-r-xl sm:text-sm font-medium transition-colors whitespace-nowrap ${activeTab === tab
+              className={`px-3 sm:px-4 py-2 text-xs   first:rounded-l-xl last:rounded-r-xl sm:text-sm font-medium transition-colors whitespace-nowrap  ${activeTab === tab
                 ? 'border border-primary bg-primary text-white'
                 : ' border border-primary text-white hover:text-primary'
                 }`}

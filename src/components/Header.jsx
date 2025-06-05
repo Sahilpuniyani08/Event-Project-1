@@ -12,7 +12,7 @@ const Header = ({ onMenuClick }) => {
         <div className="flex items-center space-x-4">
           <button
             onClick={onMenuClick}
-            className="lg:hidden text-gray-600 hover:text-gray-900"
+            className="lg:hidden text-white hover:text-white/50"
           >
             <Icon type="menu" size={24} />
           </button>
