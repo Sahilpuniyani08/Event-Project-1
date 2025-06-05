@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Icon from './Icon';
 import { menuItems } from '../constants/mockData';
 
-export const Sidebar = ({ isOpen, onClose }) => {
+ const Sidebar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -103,3 +103,4 @@ export const Sidebar = ({ isOpen, onClose }) => {
 };
 
 
+export default Sidebar
