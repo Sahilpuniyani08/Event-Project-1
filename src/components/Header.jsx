@@ -2,8 +2,8 @@
 import React from 'react';
 import Icon from './Icon';
 import { userProfile } from '../constants/mockData';
-import ProfileImage from './profileImage';
 import Logo from '../assets/logo.png'
+import ProfileImage from './profileImage';
 
 const Header = ({ onMenuClick }) => {
   return (
