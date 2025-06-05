@@ -4,7 +4,7 @@ import { userProfile } from '../constants/mockData';
 
 const ProfileImage = ({ className }) => {
   const [imageError, setImageError] = useState(false);
-  
+
   if (imageError) {
     return (
       <div className={`${className} bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-semibold`}>
@@ -12,11 +12,11 @@ const ProfileImage = ({ className }) => {
       </div>
     );
   }
-  
+
   return (
-    <img 
-      src="/src/assets/images/profile.jpg" 
-      alt="Profile" 
+    <img
+      src="/src/assets/images/profile.jpg"
+      alt="Profile"
       className={className}
       onError={() => setImageError(true)}
     />
